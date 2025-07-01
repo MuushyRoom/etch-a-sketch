@@ -43,7 +43,8 @@ Text: #4E342E (Brown)
 display: flex;
 flex-direction: row;
 background-color: rgba(255, 255, 255, 0.527);
-
+min-height: 100vh;
+height: 100%;
 }
 
 
@@ -56,15 +57,7 @@ aside{
     background-color: #B3E5FC;
     color:  #4E342E;
     flex: 1;
-min-height: 100vh;
-height: 100%;
 box-shadow: 17px 0px 5px 0px  #4e342e8a;
-}
-
-aside div{
-    padding: 10px;
-    align-content: center;
-    text-align: center;
 }
 
 .title-container{
@@ -85,22 +78,90 @@ aside div{
 
 
 
-
 .canvas-control-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
     text-align: center;
     margin: 5px;
 }
 
-
-input[type="radio"]{
-   height: 25px;
-   margin: 15px;
+ input[type="radio"]{
+    border: 0px;
+    width: 100%;
+    height: 2em;
 }
 
+
+fieldset{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    margin: 15px;
+}
+
+legend{
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #4E342E;
+}
+/* DIV COLORS SETTINGS */
+
+.color-selection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 15px;
+}
+
+.paint-option{
+     display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 15px;
+}
+
+
+
+.select-colors{
+
+    margin: 25px 0px;
+    border-radius: 3px;
+   display: grid;
+   grid-template-columns: repeat(5,1fr);
+   gap: 0;
+   grid-gap: 0;
+   width: fit-content;
+   align-self: center;
+    
+}
+
+.select-colors div{
+height: 60px;
+width: 60px;
+margin: 0;
+padding: 0;
+}
+
+
+.dev-message-container{
+    padding: 15px;
+    align-self: center;
+    justify-content: center;
+    margin: 25px 0px;
+}
+
+
+.dev-message-container p{
+font-size: 1rem;
+font-weight: 500;
+
+}
+
+.dev-message-container p span{
+color: red;
+}
 
 
 

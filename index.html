@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles.css">
     <title>Etch-a-Sketch</title>
 </head>
-<body onload="displayGrids()">
+<body onload="getDimentions(),displayColors()">
     <div class="container">
         <div class="main-container">
           <aside>
@@ -15,23 +15,53 @@
                 </h1>
             </div>
             <div class="canvas-control-container">
-            <label for="canvas-size" class="label">Grid Size</label>
+            <label for="canvas-size" class="label">Canvas Size</label>
             <input type="number" class="input-container" id="canvas-size" placeholder="5" value="5"  min="5" onchange="getDimentions()">
             <button onclick="clearCanvas()">Clear Canvas</button>
             </div>
+
+ 
+               
+
+                <fieldset class="paint-option">
+                    <legend>Paint Option</legend>
+
+                        <div>
+
+                            
+              <label for="hover-paint">Hover Paint</label>
+            <input type="radio" onclick="getDimentions()" id="hover-paint" name="paint-selection" checked  >
+            </div>
+            <div>
+            <label for="click-paint">Click Paint</label>
+            <input type="radio" onclick="getDimentions()"  id="click-paint" name="paint-selection" >
+                </div>
+            </fieldset>
             
-            
-
-             <div class="canvas-control-container">
-                 <label for="single-color">Random Colors</label>
-            <input type="radio" value="1" checked id="single-color" name="color-selection" class="checkbox">
-
-
+             <fieldset class="color-selection">
+                    <legend>Color Selection</legend>
+                    <div>
+                           <label for="single-color">Random Colors</label>
+            <input type="radio" onclick="getDimentions()" checked id="random-color" name="color-selection">
+             </div>
+             <div>
             <label for="single-color">Single Color</label>
-            <input type="radio" value="1" id="single-color" name="color-selection" class="checkbox">
+            <input type="radio"  id="single-color" name="color-selection" >
+              </div>
+
+                </fieldset>
+            <!-- CONTAINER FOR COLORS -->
+            <div class="select-colors">
 
             </div>
 
+             <div class="dev-message-container">
+                    <h4>Reminder:</h4>
+                    <p>Changing from hover to paint from Click to paint and vice versa will clear the canvas
+                        and might result in a loss of work <span>"although it will be lost eventually bocz i don't have a save function :D"</span>
+                    </p>
+            </div>
+            
         </aside>
         <main class="main">
 
