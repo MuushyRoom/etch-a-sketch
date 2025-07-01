@@ -17,13 +17,19 @@
             <div class="canvas-control-container">
             <label for="canvas-size" class="label">Grid Size</label>
             <input type="number" class="input-container" id="canvas-size" placeholder="5" value="5"  min="5" onchange="getDimentions()">
-            
+            <button onclick="clearCanvas()">Clear Canvas</button>
             </div>
             
             
 
              <div class="canvas-control-container">
-            <button onclick="clearCanvas()">Clear Canvas</button>
+                 <label for="single-color">Random Colors</label>
+            <input type="radio" value="1" checked id="single-color" name="color-selection" class="checkbox">
+
+
+            <label for="single-color">Single Color</label>
+            <input type="radio" value="1" id="single-color" name="color-selection" class="checkbox">
+
             </div>
 
         </aside>
