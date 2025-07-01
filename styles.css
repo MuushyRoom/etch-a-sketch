@@ -61,6 +61,7 @@ box-shadow: 17px 0px 5px 0px  #4e342e8a;
 }
 
 .title-container{
+    text-align: center;
     font-size: 2rem;
     text-shadow: 1px 1px #080808;
 }
@@ -215,8 +216,8 @@ color: white;
 }
 
 .grid-container div{
-    height: 50px;
-    width:   50px;
+    height: 30px;
+    width:   30px;
   
 }
 

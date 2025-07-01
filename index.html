@@ -30,11 +30,11 @@
 
                             
               <label for="hover-paint">Hover Paint</label>
-            <input type="radio" onclick="getDimentions()" id="hover-paint" name="paint-selection" checked  >
+            <input type="radio" onclick="divHover()" id="hover-paint" name="paint-selection" checked  >
             </div>
             <div>
             <label for="click-paint">Click Paint</label>
-            <input type="radio" onclick="getDimentions()"  id="click-paint" name="paint-selection" >
+            <input type="radio" onclick="divClick()"  id="click-paint" name="paint-selection" >
                 </div>
             </fieldset>
             
@@ -42,11 +42,11 @@
                     <legend>Color Selection</legend>
                     <div>
                            <label for="single-color">Random Colors</label>
-            <input type="radio" onclick="getDimentions()" checked id="random-color" name="color-selection">
+            <input type="radio" checked id="random-color" name="color-selection">
              </div>
              <div>
             <label for="single-color">Single Color</label>
-            <input type="radio"  id="single-color" name="color-selection" >
+            <input type="radio" id="single-color" name="color-selection" >
               </div>
 
                 </fieldset>
@@ -55,12 +55,12 @@
 
             </div>
 
-             <div class="dev-message-container">
+             <!-- <div class="dev-message-container">
                     <h4>Reminder:</h4>
                     <p>Changing from hover to paint from Click to paint and vice versa will clear the canvas
                         and might result in a loss of work <span>"although it will be lost eventually bocz i don't have a save function :D"</span>
                     </p>
-            </div>
+            </div> -->
             
         </aside>
         <main class="main">

@@ -9,14 +9,57 @@ function clearCanvas() {
 
 
 
+//EXPERIMENT FUNCTION
+function divHover(){
+
+ // Gets the parent container
+const parentContainer = document.querySelector("#grid-container");
+
+
+  // Select all direct child divs
+const childDivs = parentContainer.querySelectorAll(":scope > div");
+console.log("🚀 ~ divHover ~ childDivs:", childDivs)
+
+  // Iterate through the selected divs and do something with them
+  for (let i = 0; i < childDivs.length; i++) {
+    const div = childDivs[i];
+         div.setAttribute("onmouseover", "colorChange(this)");
+         div.removeAttribute("onclick");
+  }
+
+}
+
+function divClick(){
+
+ // Gets the parent container
+const parentContainer = document.querySelector("#grid-container");
+
+
+  // Select all direct child divs
+const childDivs = parentContainer.querySelectorAll(":scope > div");
+console.log("🚀 ~ divClick ~ childDivs:", childDivs)
+
+  // Iterate through the selected divs and do something with them
+  for (let i = 0; i < childDivs.length; i++) {
+    const div = childDivs[i];
+         div.setAttribute("onclick", "colorChange(this)");
+         div.removeAttribute("onmouseover");
+  }
+
+}
+
+
+
+
+
 
 //FIRST FUNCTION TO RUN
 function getDimentions() {
   let dimentions = document.querySelector("#canvas-size");
 
-  if (dimentions.value > 20) {
-    alert("MAX GRID SIZE => 20!");
-    dimentions.value = 20;
+  if (dimentions.value > 30) {
+    alert("MAX GRID SIZE => 30!");
+    dimentions.value = 30;
   } else if (dimentions.value < 5) {
     alert("MIN GRID SIZE => 5!");
     dimentions.value = 5;
@@ -30,23 +73,14 @@ function displayGrids(getDimentionsParameter) {
   
 let dimentions = getDimentionsParameter || 5;
 const isHover = document.querySelector("#hover-paint");
-const isClick = document.querySelector("#click-paint");
-let div = null;
-if(isHover.checked){
-console.log("🚀 ~ displayGrids ~ isHover:", isHover.checked)
- div = createDiv();
-}else{
- div = createClickDiv();
-}
+const canvasContainer = document.querySelector("#grid-container");
+canvasContainer.style.gridTemplateColumns = `repeat(${dimentions},1fr)`;
+
+  
+let div = (isHover.checked == false)?`<div onclick="colorChange(this)"></div>` : `<div onmouseover="colorChange(this)"></div>`;
 
 
-
-console.log("🚀 ~ div ~ div:", div)
-
-  const canvasContainer = document.querySelector("#grid-container");
-  canvasContainer.style.gridTemplateColumns = `repeat(${dimentions},1fr)`;
-
-  canvasContainer.innerHTML = "";
+canvasContainer.innerHTML = "";
 
   for (let i = 0; i != dimentions; i++) {
     canvasContainer.innerHTML += `${div}`;
@@ -58,21 +92,6 @@ console.log("🚀 ~ div ~ div:", div)
 
 
 
-
-
-
-
-//CALLED BY SECOND FUNCTION {DISPLAYGRID}
-function createDiv() {
-  let div = `<div onmouseover="colorChange(this)"></div>`;
-
-  return div;
-}
-function createClickDiv() {
-  let div = `<div onclick="colorChange(this)"></div>`;
-
-  return div;
-}
 
 
 //THIRD FUNCTION 
