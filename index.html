@@ -8,23 +8,27 @@
 </head>
 <body onload="displayGrids()">
     <div class="container">
-        <header>
+        <div class="main-container">
+          <aside>
+            <div class="title-container">
+            <h1><span>Etch</span>-<span>a</span>-<span>Sketch</span>
+                </h1>
+            </div>
             <div class="canvas-control-container">
             <label for="canvas-size" class="label">Grid Size</label>
             <input type="number" class="input-container" id="canvas-size" placeholder="5" value="5"  min="5" onchange="getDimentions()">
             
             </div>
             
-            <div class="title-container">
-            <h1>Etch-a-Sketch</h1>
-            </div>
+            
 
              <div class="canvas-control-container">
             <button onclick="clearCanvas()">Clear Canvas</button>
             </div>
 
-        </header>
+        </aside>
         <main class="main">
+
           
             <div id="grid-container" class="grid-container">
                
@@ -34,6 +38,7 @@
 
 
         </main>
+        </div>
         <footer>
             <h3>Etch-a-Sketch by MuushyRoom for The Odin Project💙</h3>
         </footer>

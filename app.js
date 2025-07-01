@@ -1,6 +1,5 @@
 function getDimentions() {
   let dimentions = document.querySelector("#canvas-size");
-  const main = document.getElementsByClassName("main");
 
   if (dimentions.value > 20) {
     alert("MAX GRID SIZE => 20!");
@@ -9,9 +8,7 @@ function getDimentions() {
     alert("MIN GRID SIZE => 5!");
     dimentions.value = 5;
   } else {
-    if (dimentions > 10) {
-      main.style.padding = "20px";
-    }
+
     displayGrids(dimentions.value);
   }
 
